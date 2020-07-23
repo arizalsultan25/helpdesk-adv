@@ -15,15 +15,8 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'thread_id') ?>
+    <?= $form->field($model, 'globalSearch') ?>
 
-    <?= $form->field($model, 'title') ?>
-
-    <?= $form->field($model, 'description') ?>
-
-    <?= $form->field($model, 'date') ?>
-
-    <?= $form->field($model, 'image') ?>
 
     <?php // echo $form->field($model, 'status') ?>
 

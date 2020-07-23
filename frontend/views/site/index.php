@@ -6,6 +6,8 @@ $this->title = 'Sisma Helpdesk';
 
 use yii\helpers\Html;
 use yii\data\SqlDataProvider;
+use yii\widgets\ActiveForm;
+
 
 
 $count = Yii::$app->db->createCommand('
@@ -75,6 +77,7 @@ $models = $provider->getModels();
                     </div>
                 </div>
                 <div class="search-input">
+                    
                     <input type="text" placeholder="How can we help You?">
                     <button class="site-btn">Search</button>
                 </div>
