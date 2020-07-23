@@ -85,44 +85,11 @@ $models = $provider->getModels();
 </section>
 <!-- Hero Section end -->
 
-<!-- Intro Section end -->
-<section class="intro-section spad">
-    <div class="container">
-        <div class="section-title">
-            <h2>Sell Faster. Save Thousands.</h2>
-        </div>
-        <div class="row intro-first">
-            <div class="col-lg-6 order-lg-2">
-                <?= Html::img('@web/mondy/img/about/1.jpg') ?>
-            </div>
-            <div class="col-lg-6 order-lg-1">
-                <div class="about-text">
-                    <h3>We charge 2% total. No hidden fees or upfront costs.</h3>
-                    <p>Donec eget efficitur ex. Donec eget dolor vitae eros feugiat tristique id vitae massa. Proin vulputate congue rutrum. Fusce lobortis a enim eget tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse potenti. Ut gravida mattis magna, non varius lorem sodales nec. In libero orci, ornare non nisl a, auctor euismod purus. Morbi pretium interdum vestibulum. Fusce nec eleifend ipsum. Sed non blandit tellus.</p>
-                    <a href="#" class="readmore-btn">Find out more</a>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-6">
-                <?= Html::img('@web/mondy/img/about/2.jpg') ?>
-            </div>
-            <div class="col-lg-6 ">
-                <div class="about-text">
-                    <h3>How Much Can You Save? We work for you, not commission.</h3>
-                    <p>Donec eget efficitur ex. Donec eget dolor vitae eros feugiat tristique id vitae massa. Proin vulputate congue rutrum. Fusce lobortis a enim eget tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse potenti. Ut gravida mattis magna, non varius lorem sodales nec. In libero orci, ornare non nisl a, auctor euismod purus. Morbi pretium interdum vestibulum. Fusce nec eleifend ipsum. Sed non blandit tellus.</p>
-                    <a href="#" class="readmore-btn">Find out more</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Intro Section end -->
 
-<section class="accordion-section clearfix mt-3" style="margin-bottom: 140px;" aria-label="Question Accordions">
+<section class="accordion-section clearfix mt-3" style="margin-bottom: 140px; margin-top:  140px" aria-label="Question Accordions">
     <div class="container">
-        <div class="section-title">
-            <h2>Frequently Asked Questions</h2>
+        <div class="section-title mt-4">
+            <h2>Featured Question</h2>
         </div>
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
@@ -154,70 +121,146 @@ $models = $provider->getModels();
 </section>
 
 
-<!-- Property Section -->
-<section class="property-section">
-    <div class="container">
-        <div class="section-title">
-            <h2>Recently Add Homes</h2>
-        </div>
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="property-item">
-                    <div class="pi-image">
-                        <?= Html::img('@web/mondy/img/property/1.jpg') ?>
-                        <div class="pi-badge new">New</div>
-                    </div>
-                    <h3>$469,000</h3>
-                    <h5>3 Bedrooms Townhouse</h5>
-                    <p>Donec eget efficitur ex. Donec eget dolor vitae eros feugiat tristique id vitae massa. Proin vulputate congue rutrum. Fusce lobortis a enim eget tempus. Class aptent taciti sociosqu ad litora.</p>
-                    <a href="#" class="readmore-btn">Find out more</a>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="property-item">
-                    <div class="pi-image">
-                        <?= Html::img('@web/mondy/img/property/2.jpg') ?>
-                        <div class="pi-badge offer">Offer</div>
-                    </div>
-                    <h3>$369,000</h3>
-                    <h5>3 Bedrooms Townhouse</h5>
-                    <p>Donec eget efficitur ex. Donec eget dolor vitae eros feugiat tristique id vitae massa. Proin vulputate congue rutrum. Fusce lobortis a enim eget tempus. Class aptent taciti sociosqu ad litora.</p>
-                    <a href="#" class="readmore-btn">Find out more</a>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="property-item">
-                    <div class="pi-image">
-                        <?= Html::img('@web/mondy/img/property/3.jpg') ?>
-                        <div class="pi-badge new">New</div>
-                    </div>
-                    <h3>$560,000</h3>
-                    <h5>3 Bedrooms Townhouse</h5>
-                    <p>Donec eget efficitur ex. Donec eget dolor vitae eros feugiat tristique id vitae massa. Proin vulputate congue rutrum. Fusce lobortis a enim eget tempus. Class aptent taciti sociosqu ad litora.</p>
-                    <a href="#" class="readmore-btn">Find out more</a>
-                </div>
-            </div>
-        </div>
+<!-- bradcam_area_start -->
+<div class="bradcam_area breadcam_bg overlay2">
+        <h3>Support Centre</h3>
     </div>
-</section>
-<!-- Property Section end -->
+    <!-- bradcam_area_end -->
 
-
-<!-- Stories Section end -->
-<section class="stories-section spad">
-    <div class="container">
-        <div class="row ">
-            <div class="col-lg-5 order-lg-2">
-                <?= Html::img('@web/mondy/img/about/3.jpg') ?>
-            </div>
-            <div class="col-lg-7 order-lg-1">
-                <div class="about-text">
-                    <h2>Seller Success Stories</h2>
-                    <p>Fusce lobortis a enim eget tempus. Class aptent taciti sociosqu ad litora. Donec eget efficitur ex. Donec eget dolor vitae eros feugiat tristique id vitae massa. Proin vulputate congue rutrum. Fusce lobortis a enim eget tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse potenti. Ut gravida mattis magna, non varius lorem sodales nec. In libero orci, ornare non nisl a, auctor euismod purus. Morbi pretium interdum vestibulum. Fusce nec eleifend ipsum. Sed non blandit tellus. </p>
-                    <a href="#" class="readmore-btn">Find out more</a>
+    <!-- core_features_start -->
+    <div class="core_features2 faq_area">
+            <div class="container">
+                <div class="border-bottm">
+                    <div class="row">
+                        <div class="col-xl-12 col-md-12">
+                            <div class="featurest_tabs ">
+                                <nav>
+                                    <div class="nav" id="nav-tab" role="tablist">
+                                        <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="false">General Ask</a>
+                                        <a class="nav-item nav-link active show" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="true">Technical Support</a>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                    <div id="accordion">
+                                            <div class="card">
+                                                <div class="card-header" id="headingTwo">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link collapsed" data-toggle="collapse"
+                                                            data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                            <i class="flaticon-info"></i> Is WordPress hosting worth it?
+                                                        </button>
+                                                    </h5>
+                                                </div>
+                                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                                    data-parent="#accordion">
+                                                    <div class="card-body">
+                                                        Our set he for firmament morning sixth subdue darkness creeping gathered divide our
+                                                        let god moving. Moving in fourth air night bring upon
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </div>
+                            </div>
+                            <div class="tab-pane fade active show" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                    <div id="accordion">
+                                            <div class="card">
+                                                <div class="card-header" id="headingTwoo">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link collapsed" data-toggle="collapse"
+                                                            data-target="#collapseTwoo" aria-expanded="false" aria-controls="collapseTwoo">
+                                                            <i class="flaticon-info"></i> Is WordPress hosting worth it?
+                                                        </button>
+                                                    </h5>
+                                                </div>
+                                                <div id="collapseTwoo" class="collapse" aria-labelledby="headingTwoo"
+                                                    data-parent="#accordion">
+                                                    <div class="card-body">
+                                                        Our set he for firmament morning sixth subdue darkness creeping gathered divide our
+                                                        let god moving. Moving in fourth air night bring upon
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header" id="headingOne1">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link collapsed" data-toggle="collapse"
+                                                            data-target="#collapseOne1" aria-expanded="false" aria-controls="collapseOne1">
+                                                            <i class="flaticon-info"></i> What are the advantages <span>of WordPress hosting
+                                                                over shared?</span>
+                                                        </button>
+                                                    </h5>
+                                                </div>
+                                                <div id="collapseOne1" class="collapse" aria-labelledby="headingOne1" data-parent="#accordion1"
+                                                    style="">
+                                                    <div class="card-body">
+                                                        Our set he for firmament morning sixth subdue darkness creeping gathered divide our
+                                                        let god moving. Moving in fourth air night bring upon
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header" id="headingThreee">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link collapsed" data-toggle="collapse"
+                                                            data-target="#collapseThreee" aria-expanded="false"
+                                                            aria-controls="collapseThree">
+                                                            <i class="flaticon-info"></i> Will you transfer my site?
+                                                        </button>
+                                                    </h5>
+                                                </div>
+                                                <div id="collapseThreee" class="collapse" aria-labelledby="headingThreee"
+                                                    data-parent="#accordion">
+                                                    <div class="card-body">
+                                                        Our set he for firmament morning sixth subdue darkness creeping gathered divide our
+                                                        let god moving. Moving in fourth air night bring upon
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header" id="heading_44">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link collapsed" data-toggle="collapse"
+                                                            data-target="#collapse_44" aria-expanded="false" aria-controls="collapse_44">
+                                                            <i class="flaticon-info"></i> Why should I host with Hostza?
+                                                        </button>
+                                                    </h5>
+                                                </div>
+                                                <div id="collapse_44" class="collapse" aria-labelledby="heading_44" data-parent="#accordion">
+                                                    <div class="card-body">
+                                                        Our set he for firmament morning sixth subdue darkness creeping gathered divide our
+                                                        let god moving. Moving in fourth air night bring upon
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header" id="heading_55">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link collapsed" data-toggle="collapse"
+                                                            data-target="#collapse_55" aria-expanded="false" aria-controls="collapse_55">
+                                                            <i class="flaticon-info"></i> How do I get started <span>with Shared
+                                                                Hosting?</span>
+                                                        </button>
+                                                    </h5>
+                                                </div>
+                                                <div id="collapse_55" class="collapse" aria-labelledby="heading_55" data-parent="#accordion">
+                                                    <div class="card-body">
+                                                        Our set he for firmament morning sixth subdue darkness creeping gathered divide our
+                                                        let god moving. Moving in fourth air night bring upon
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- Stories Section end -->
+    <!-- core_features_end -->
