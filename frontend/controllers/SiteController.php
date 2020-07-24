@@ -14,7 +14,10 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
-
+use app\models\ThreadSearch;
+use app\models\Thread;
+use yii\data\ActiveDataProvider;
+use yii\db\ActiveRecord;
 
 /**
  * Site controller
@@ -75,7 +78,14 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $searchModel = new ThreadSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        //$threads = Thread::find()->where(['status'=> 'solved'])->all();
+
+        $thread = new ActiveDataProvider(['query'=>Thread::find(), 
+        'pagination'=>['pageSize'=>4]]);
+        return $this->render('index',['thread'=>$thread]);
     }
 
     /**

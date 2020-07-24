@@ -8,6 +8,7 @@ use app\models\ThreadSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * ThreadController implements the CRUD actions for Thread model.
@@ -67,6 +68,14 @@ class ThreadController extends Controller
         $model = new Thread();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
+            $imageFile = UploadedFile::getInstance($model, 'image');
+
+            if(isset($imageFile->size)){
+                $imageFile->saveAs('uploads/'. $imageFile->baseName.'.'.$imageFile->extension);
+            }
+            $model->image = $imageFile->baseName.'.'.$imageFile->extension;
+            $model->save();
             return $this->redirect(['view', 'id' => $model->thread_id]);
         }
 
@@ -86,6 +95,7 @@ class ThreadController extends Controller
     {
         $model = $this->findModel($id);
 
+        
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->thread_id]);
         }

@@ -6,9 +6,8 @@ $this->title = 'Sisma Helpdesk';
 
 use yii\helpers\Html;
 use yii\data\SqlDataProvider;
-use yii\widgets\ActiveForm;
-
-
+use yii\grid\GridView;
+use yii\widgets\ListView;
 
 $count = Yii::$app->db->createCommand('
     SELECT COUNT(*) FROM thread')->queryScalar();
@@ -66,7 +65,7 @@ $models = $provider->getModels();
 <!-- Header Section end -->
 
 <!-- Hero Section end -->
-<section class="hero-section set-bg back-img" data-setbg="">
+<section class="hero-section set-bg" data-setbg="">
     <div class="container">
         <div class="hero-warp">
             <form class="main-search-form">
@@ -97,29 +96,20 @@ $models = $provider->getModels();
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
             <?php
-            $count = 1;
+            //$count = 1;
 
-            foreach ($models as $data) {
+            //foreach ($models as $data) {
             ?>
+            <?php
+                echo ListView::widget([
+                    'dataProvider'=>$thread,
+                    'itemView' => '_thread',
+                ])
+            ?>
+                
 
-                <div class="panel panel-default">
-                    <div class="panel-heading p-3 mb-3" role="tab" id="heading<?= $count ?>">
-                        <h4>
-                            <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse<?= $count ?>" aria-expanded="true" aria-controls="collapse<?= $count ?>">
-                                <?= $data['title'] ?>
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="collapse<?= $count ?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<?= $count ?>">
-                        <div class="panel-body px-3 mb-4 ml-2">
-                        <p><?= $data['description'] ?></p>
-                        <sub class="pull-right">Date : <?= $data['date'] ?></sub> 
-                        </div>
-                    </div>
-                </div>
-
-            <?php $count++;
-            } ?>
+            <?php //$count++;
+            //} ?>
         </div>
 </section>
 
@@ -184,75 +174,6 @@ $models = $provider->getModels();
                                                 </div>
                                                 <div id="collapseTwoo" class="collapse" aria-labelledby="headingTwoo"
                                                     data-parent="#accordion">
-                                                    <div class="card-body">
-                                                        Our set he for firmament morning sixth subdue darkness creeping gathered divide our
-                                                        let god moving. Moving in fourth air night bring upon
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card">
-                                                <div class="card-header" id="headingOne1">
-                                                    <h5 class="mb-0">
-                                                        <button class="btn btn-link collapsed" data-toggle="collapse"
-                                                            data-target="#collapseOne1" aria-expanded="false" aria-controls="collapseOne1">
-                                                            <i class="flaticon-info"></i> What are the advantages <span>of WordPress hosting
-                                                                over shared?</span>
-                                                        </button>
-                                                    </h5>
-                                                </div>
-                                                <div id="collapseOne1" class="collapse" aria-labelledby="headingOne1" data-parent="#accordion1"
-                                                    style="">
-                                                    <div class="card-body">
-                                                        Our set he for firmament morning sixth subdue darkness creeping gathered divide our
-                                                        let god moving. Moving in fourth air night bring upon
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card">
-                                                <div class="card-header" id="headingThreee">
-                                                    <h5 class="mb-0">
-                                                        <button class="btn btn-link collapsed" data-toggle="collapse"
-                                                            data-target="#collapseThreee" aria-expanded="false"
-                                                            aria-controls="collapseThree">
-                                                            <i class="flaticon-info"></i> Will you transfer my site?
-                                                        </button>
-                                                    </h5>
-                                                </div>
-                                                <div id="collapseThreee" class="collapse" aria-labelledby="headingThreee"
-                                                    data-parent="#accordion">
-                                                    <div class="card-body">
-                                                        Our set he for firmament morning sixth subdue darkness creeping gathered divide our
-                                                        let god moving. Moving in fourth air night bring upon
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card">
-                                                <div class="card-header" id="heading_44">
-                                                    <h5 class="mb-0">
-                                                        <button class="btn btn-link collapsed" data-toggle="collapse"
-                                                            data-target="#collapse_44" aria-expanded="false" aria-controls="collapse_44">
-                                                            <i class="flaticon-info"></i> Why should I host with Hostza?
-                                                        </button>
-                                                    </h5>
-                                                </div>
-                                                <div id="collapse_44" class="collapse" aria-labelledby="heading_44" data-parent="#accordion">
-                                                    <div class="card-body">
-                                                        Our set he for firmament morning sixth subdue darkness creeping gathered divide our
-                                                        let god moving. Moving in fourth air night bring upon
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card">
-                                                <div class="card-header" id="heading_55">
-                                                    <h5 class="mb-0">
-                                                        <button class="btn btn-link collapsed" data-toggle="collapse"
-                                                            data-target="#collapse_55" aria-expanded="false" aria-controls="collapse_55">
-                                                            <i class="flaticon-info"></i> How do I get started <span>with Shared
-                                                                Hosting?</span>
-                                                        </button>
-                                                    </h5>
-                                                </div>
-                                                <div id="collapse_55" class="collapse" aria-labelledby="heading_55" data-parent="#accordion">
                                                     <div class="card-body">
                                                         Our set he for firmament morning sixth subdue darkness creeping gathered divide our
                                                         let god moving. Moving in fourth air night bring upon

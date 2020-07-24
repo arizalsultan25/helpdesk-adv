@@ -36,6 +36,7 @@ class Thread extends \yii\db\ActiveRecord
             [['title'], 'string', 'max' => 200],
             [['image'], 'string', 'max' => 255],
             [['status'], 'string', 'max' => 20],
+            [['image'], 'file', 'extensions' => 'jpg,png,gif,jpeg'],
         ];
     }
 

@@ -104,10 +104,11 @@ Helper CSS
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: top center;
+	background-image: url(../img/hero-bg.jpg);
 }
 
 .back-img{
-	background-image: url(../img/hero-bg.jpg);
+	
 	background-size: cover;
 	width: 100%;
 }
