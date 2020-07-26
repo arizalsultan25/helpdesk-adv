@@ -16,12 +16,12 @@ class m200724_094801_create_answer_table extends Migration
     public function safeUp()
     {
         $this->createTable('{{%answer}}', [
-            'question' => $this->id()->integer()->notNull(),
-            'answer_id' => $this->integer()->notNull()->primaryKey(),
-            'email' => $this->varchar(100)->notNull(),
+            'question' => $this->integer()->notNull(),
+            'answer_id' => $this->primaryKey(),
+            'email' => $this->string(100)->notNull(),
             'answer' => $this->text()->notNull(),
             'created_on' => $this->date(),
-            'status' => $this->varchar(20),
+            'status' => $this->string(20),
         ]);
 
         // creates index for column `question`

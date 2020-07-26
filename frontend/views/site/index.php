@@ -79,10 +79,12 @@ $models = $provider->getModels();
                     <form action="index" method="get">
                         <input name="globalSearch" type="text" placeholder="How can we help You?">
                         <button type="submit" class="site-btn">Search</button>
-                    </form>
+                    </form> 
                     <?php  //echo $this->render('_search', ['model' => $searchModel]); 
                     ?>
                 </div>
+                <?php echo $this->render('_search', ['model' => $searchModel]); 
+                    ?>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. </p>
             </form>
         </div>
@@ -90,6 +92,8 @@ $models = $provider->getModels();
 </section>
 <!-- Hero Section end -->
 
+<?php  echo $this->render('_search', ['model' => $searchModel]); 
+                    ?>
 
 <section class="accordion-section clearfix mt-3" style="margin-bottom: 140px; margin-top:  140px" aria-label="Question Accordions">
     <div class="container">
@@ -105,7 +109,7 @@ $models = $provider->getModels();
             ?>
             <?php
             echo ListView::widget([
-                'dataProvider' => $thread,
+                'dataProvider' => $dataProvider,
                 'itemView' => '_thread',
             ])
             ?>
