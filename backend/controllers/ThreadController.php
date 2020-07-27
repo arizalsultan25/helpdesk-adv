@@ -68,13 +68,6 @@ class ThreadController extends Controller
         $model = new Thread();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-
-            $imageFile = UploadedFile::getInstance($model, 'image');
-
-            if(isset($imageFile->size)){
-                $imageFile->saveAs('uploads/'. $imageFile->baseName.'.'.$imageFile->extension);
-            }
-            $model->image = $imageFile->baseName.'.'.$imageFile->extension;
             $model->save();
             return $this->redirect(['view', 'id' => $model->thread_id]);
         }
@@ -95,7 +88,7 @@ class ThreadController extends Controller
     {
         $model = $this->findModel($id);
 
-        
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->thread_id]);
         }

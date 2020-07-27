@@ -12,9 +12,6 @@
     </div>
     <div id="collapse<?= $model->thread_id ?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<?= $model->thread_id ?>">
         <div class="panel-body px-3 mb-4 ml-2">
-            <?=  
-                ($model->image !== null) ? "<img src='@app/uploads/". $model->image ."'>".$model->image : null;
-            ?>
             <p><?= $model->description ?></p>
             <sub class="pull-right">Date : <?= $model->date ?></sub>
         </div>

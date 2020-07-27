@@ -84,7 +84,7 @@ class SiteController extends Controller
         //$threads = Thread::find()->where(['status'=> 'solved'])->all();
 
         $thread = new ActiveDataProvider(['query'=>Thread::find(), 
-        'pagination'=>['pageSize'=>5]]);
+        'pagination'=>['pageSize'=>3]]);
         return $this->render('index',['thread'=>$thread, 'searchModel' => $searchModel, 'dataProvider' => $dataProvider]);
     }
 

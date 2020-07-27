@@ -2,7 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-
+//use dosamigos\ckeditor\CKEditor;
+use mihaildev\ckeditor\CKEditor;
 /* @var $this yii\web\View */
 /* @var $model app\models\Thread */
 /* @var $form yii\widgets\ActiveForm */
@@ -14,9 +15,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
-
-    <?= $form->field($model, 'image')->fileInput(['class' => 'form-control'])->label('image') ?>
+    <?= $form->field($model, 'description')->widget(CKEditor::className(),[
+    'editorOptions' => [
+        'preset' => 'standard', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
+        'inline' => false, //по умолчанию false
+        
+    ],
+]); ?>
 
     <?= $form->field($model, 'date')->textInput(['value' => date("Y-m-d"), 'readonly'=>true]) ?>
 

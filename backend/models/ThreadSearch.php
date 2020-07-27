@@ -21,7 +21,7 @@ class ThreadSearch extends Thread
     {
         return [
             [['thread_id'], 'integer'],
-            [['title', 'description', 'globalSearch', 'date', 'image', 'status'], 'safe'],
+            [['title', 'description', 'globalSearch', 'date', 'status'], 'safe'],
         ];
     }
 

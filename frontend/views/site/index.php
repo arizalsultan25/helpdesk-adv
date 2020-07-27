@@ -92,9 +92,6 @@ $models = $provider->getModels();
 </section>
 <!-- Hero Section end -->
 
-<?php  echo $this->render('_search', ['model' => $searchModel]); 
-                    ?>
-
 <section class="accordion-section clearfix mt-3" style="margin-bottom: 140px; margin-top:  140px" aria-label="Question Accordions">
     <div class="container">
         <div class="section-title mt-4">
