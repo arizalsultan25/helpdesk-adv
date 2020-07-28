@@ -6,7 +6,6 @@ $this->title = 'Sisma Helpdesk';
 
 use yii\helpers\Html;
 use yii\data\SqlDataProvider;
-use yii\grid\GridView;
 use yii\widgets\ListView;
 
 $count = Yii::$app->db->createCommand('
@@ -31,7 +30,9 @@ $provider = new SqlDataProvider([
 $models = $provider->getModels();
 ?>
 
-<!-- Page Preloder -->
+
+
+<!-- Page Preloder
 <div id="preloder">
     <div class="loader"></div>
 </div>
@@ -47,7 +48,7 @@ $models = $provider->getModels();
             <li><?= Html::a('About', ['/site/about']); ?></li>
             <li><a href="#">Pages</a>
                 <ul class="sub-menu">
-                    <li><a href="about-us.html">About Us</a></li>
+                    <li><?= Html::a('About', ['/site/test']); ?></li>
                     <li><a href="search-result.html">Search Result</a></li>
                     <li><a href="single-property.html">Property</a></li>
                 </ul>
@@ -60,7 +61,6 @@ $models = $provider->getModels();
             </div>
         </div>
     </nav>
-
 </header>
 <!-- Header Section end -->
 
@@ -79,12 +79,12 @@ $models = $provider->getModels();
                     <form action="index" method="get">
                         <input name="globalSearch" type="text" placeholder="How can we help You?">
                         <button type="submit" class="site-btn">Search</button>
-                    </form> 
+                    </form>
                     <?php  //echo $this->render('_search', ['model' => $searchModel]); 
                     ?>
                 </div>
-                <?php echo $this->render('_search', ['model' => $searchModel]); 
-                    ?>
+                <?php echo $this->render('_search', ['model' => $searchModel]);
+                ?>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. </p>
             </form>
         </div>
@@ -188,4 +188,17 @@ $models = $provider->getModels();
         </div>
     </div>
 </div>
+
+
 <!-- core_features_end -->
+<div class="container">
+    <div class="thread-create">
+
+        <h1>Have a Question </h1>
+
+        <?= $this->render('_form', [
+            'model' => $model,
+        ]) ?>
+
+    </div>
+</div>

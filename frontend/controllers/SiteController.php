@@ -85,7 +85,15 @@ class SiteController extends Controller
 
         $thread = new ActiveDataProvider(['query'=>Thread::find(), 
         'pagination'=>['pageSize'=>3]]);
-        return $this->render('index',['thread'=>$thread, 'searchModel' => $searchModel, 'dataProvider' => $dataProvider]);
+
+        $model = new Thread();
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $model->save();
+            return $this->redirect(['view', 'id' => $model->thread_id]);
+        }
+
+        return $this->render('index',['thread'=>$thread, 'model' => $model, 'searchModel' => $searchModel, 'dataProvider' => $dataProvider]);
     }
 
     /**
@@ -151,6 +159,11 @@ class SiteController extends Controller
      *
      * @return mixed
      */
+    public function actionTest(){
+        return $this->render('test');
+    }
+
+
     public function actionAbout()
     {
         return $this->render('about');

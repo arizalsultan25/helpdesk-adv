@@ -12,10 +12,10 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/site.css',
+        //'css/site.css',
 
         //mondy css req
-        'mondy/css/bootstrap.min.css',
+        //'mondy/css/bootstrap.min.css',
         'mondy/css/font-awesome.css',
         'mondy/css/magnific-popup.css',
         'mondy/css/slicknav.css',
@@ -25,21 +25,21 @@ class AppAsset extends AssetBundle
         'css/faq-accordion.css',
 
         //hostza
-        'hostza/css/bootstrap.min.css',
+        //'hostza/css/bootstrap.min.css',
         'hostza/css/style.css',
-        'hostza/css/animate.css'
+        //'hostza/css/animate.css'
     
     ];
     public $js = [
         //mondy js req
-        'mondy/js/bootstrap.min.js',
+        //'mondy/js/bootstrap.min.js',
         //'mondy/js/jquery.magnific-popup.min.js',
         //'mondy/js/jquery.slicknav.min.js',
         //'mondy/js/jquery-3.2.1.min.js',
         'mondy/js/main.js',
     
         //hostza
-        'hostza/js/bootstrap.min.js',
+        //'hostza/js/bootstrap.min.js',
         'hostza/main.js',
         //'mondy/js/jquery-3.2.1.min.js',
     ];
