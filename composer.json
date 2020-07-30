@@ -22,6 +22,7 @@
         "yiisoft/yii2-bootstrap4" : "^2.0.8",
         "2amigos/yii2-ckeditor-widget" : "*",
         "mihaildev/yii2-ckeditor": "*"
+
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

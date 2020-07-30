@@ -19,6 +19,7 @@ use app\models\Thread;
 use yii\data\ActiveDataProvider;
 use yii\db\ActiveRecord;
 
+
 /**
  * Site controller
  */
@@ -27,6 +28,8 @@ class SiteController extends Controller
     /**
      * {@inheritdoc}
      */
+
+
     public function behaviors()
     {
         return [
@@ -162,7 +165,11 @@ class SiteController extends Controller
     public function actionTest(){
         return $this->render('test');
     }
+    
 
+    public function actionTest2(){
+        return $this->render('test2');
+    }
 
     public function actionAbout()
     {
