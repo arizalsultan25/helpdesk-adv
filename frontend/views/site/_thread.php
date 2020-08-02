@@ -1,21 +1,8 @@
-<?php
-
-?>
-
-<div class="panel panel-default mb3 pb-4">
-    <div class="panel-heading p-3 " role="tab" id="heading<?= $model->thread_id ?>">
-        <h4>
-            <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse<?= $model->thread_id ?>" aria-expanded="true" aria-controls="collapse<?= $model->thread_id ?>">
-                <?= $model->title ?>
-            </a>
-        </h4>
+<li data-aos="fade-up">
+    <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" class="collapse" href="#accordion-list-<?= $model->thread_id ?>"> <?= $model->title ?> <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+    <div id="accordion-list-<?= $model->thread_id ?>" class="collapse" data-parent=".accordion-list">
+        <p><?= $model->description ?></p>
+        <sub class="pull-right">Date : <?= $model->date ?></sub>
     </div>
-    <div id="collapse<?= $model->thread_id ?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<?= $model->thread_id ?>">
-        <div class="panel-body px-3 mb-4 ml-2">
-            <p><?= $model->description ?></p>
-            <sub class="pull-right">Date : <?= $model->date ?></sub>
-        </div>
-    </div>
-</div>
-<br>
+</li>
 <br>

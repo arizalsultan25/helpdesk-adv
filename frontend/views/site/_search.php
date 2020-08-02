@@ -9,20 +9,21 @@ use yii\widgets\ActiveForm;
 ?>
 
 
-    <?php $form = ActiveForm::begin([
-        'action' => ['index'],
-        'method' => 'get',
-    ]); ?>
+<?php $form = ActiveForm::begin([
+    'action' => ['index'],
+    'method' => 'get',
+]);
+?>
 
-    <?= $form->field($model, 'globalSearch') ?>
+<?= $form->field($model, 'globalSearch') ?>
 
 
-    <?php // echo $form->field($model, 'status') ?>
 
-    <div class="form-group">
-        <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary']) ?>
-    </div>
+<?php // echo $form->field($model, 'status') 
+?>
 
-    <?php ActiveForm::end(); ?>
+<div class="form-group">
+    <button type="submit" class="download-btn"><i class='bx bxs-search'></i> Search</a>
+</div>
 
+<?php ActiveForm::end(); ?>
