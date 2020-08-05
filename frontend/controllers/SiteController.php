@@ -83,10 +83,11 @@ class SiteController extends Controller
     {
         $searchModel = new ThreadSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
+        $dataProvider->pagination = ['pageSize' => 3];
+        
         //$threads = Thread::find()->where(['status'=> 'solved'])->all();
 
-        $thread = new ActiveDataProvider(['query'=>Thread::find(), 
+        $thread = new ActiveDataProvider(['query'=>Thread::find()->where(['faq'=>'yes']), 
         'pagination'=>['pageSize'=>5]]);
 
         $model = new Thread();

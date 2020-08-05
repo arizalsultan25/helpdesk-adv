@@ -2,14 +2,15 @@
 
 use yii\helpers\Html;
 ?>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <style>
-    /*******************************
+	/*******************************
 * MODAL AS LEFT/RIGHT SIDEBAR
 * Add "left" or "right" in modal parent div, after class="modal".
 * Get free snippets on bootpen.com
 *******************************/
-	.modal.left .modal-dialog,
+.modal.left .modal-dialog,
 	.modal.right .modal-dialog {
 		position: fixed;
 		margin: auto;
@@ -108,45 +109,39 @@ body {
 }
 </style>
 
-<!-- Header Section -->
-<header class="header-section">
-    <a href="index.php" class="site-logo">
-        <?= Html::img('@web/mondy/img/logo.png', ['width' => '150', 'height' => '43']) ?>
-    </a>
-    <nav class="header-nav">
-        <ul class="main-menu">
-            <li><?= Html::a('Home', ['/site'], ['class' => 'active']); ?></li>
-            <li><?= Html::a('About', ['/site/about']); ?></li>
-            <li><a href="#">Pages</a>
-                <ul class="sub-menu">
-                    <li><?= Html::a('About', ['/site/test']); ?></li>
-                    <li><a href="search-result.html">Search Result</a></li>
-                    <li><a href="single-property.html">Property</a></li>
-                </ul>
-            </li>
-            <li><?= Html::a('Contact', ['/site/contact']); ?></li>
-        </ul>
-        <div class="header-right">
-            <div class="user-panel">
-                <?= Html::a('Login', ['/site/login'], ['class' => 'register']); ?>
-            </div>
-        </div>
-    </nav>
-</header>
+<div class="container demo">
+	
+	
+	<div class="text-center">
+		<button type="button" class="btn btn-demo" data-toggle="modal" data-target="#myModal">
+			Left Sidebar Modal
+		</button>
 
-<body style="margin-top: 120px;">
-    <div class="container">
-        <div class="row">
-            <div class="col-8">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam, pariatur!
-            </div>
-            <div class="col-4">
-                Lorem ipsum dolor sit. <br>
-                <button type="button" class="btn btn-demo" data-toggle="modal" data-target="#myModal2">
-                    Right Sidebar Modal
-                </button>
-            </div>
-            <!-- Modal -->
+		<button type="button" class="btn btn-demo" data-toggle="modal" data-target="#myModal2">
+			Right Sidebar Modal
+		</button>
+	</div>
+
+	<!-- Modal -->
+	<div class="modal left fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Left Sidebar</h4>
+				</div>
+
+				<div class="modal-body">
+					<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+					</p>
+				</div>
+
+			</div><!-- modal-content -->
+		</div><!-- modal-dialog -->
+	</div><!-- modal -->
+	
+	<!-- Modal -->
 	<div class="modal right fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
@@ -156,17 +151,18 @@ body {
 					<h4 class="modal-title" id="myModalLabel2">Right Sidebar</h4>
 				</div>
 
-				<div class="modal-body" style="height: 85%">
+				<div class="modal-body">
 					<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
 					</p>
-                </div>
-                <div class="modal-footer">
-                    <input type="text" class="form-control" placeholder="ask my anything">
-                </div>
+				</div>
 
 			</div><!-- modal-content -->
 		</div><!-- modal-dialog -->
 	</div><!-- modal -->
-        </div>
+	
+	
+</div><!-- container -->
 
-</body>
+<footer class="demo-footer">
+	<a href="http://www.bootpen.com" target="_blank">Get more code snippets</a>
+</footer>

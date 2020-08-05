@@ -27,6 +27,8 @@ use mihaildev\ckeditor\CKEditor;
 
     <?= $form->field($model, 'status')->dropDownList(['solved'=>'Solved','on progress'=>'On-progress']) ?>
 
+    <?= $form->field($model, 'faq')->dropDownList(['no'=>'No','yes'=>'Yes']) ?>
+
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>

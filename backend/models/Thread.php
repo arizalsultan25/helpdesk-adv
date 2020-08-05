@@ -35,6 +35,7 @@ class Thread extends \yii\db\ActiveRecord
             [['date'], 'safe'],
             [['title'], 'string', 'max' => 200],
             [['status'], 'string', 'max' => 20],
+            [['faq'], 'string'],
         ];
     }
 
@@ -49,6 +50,7 @@ class Thread extends \yii\db\ActiveRecord
             'description' => 'Description',
             'date' => 'Date',
             'status' => 'Status',
+            'faq' => 'FAQ',
         ];
     }
 }

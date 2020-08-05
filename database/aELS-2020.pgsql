@@ -115,8 +115,7 @@ CREATE TABLE public.thread (
     title character varying(200) NOT NULL,
     description text NOT NULL,
     date date NOT NULL,
-    status character varying(20),
-    faq character varying
+    status character varying(20)
 );
 
 
@@ -248,10 +247,13 @@ COPY public.question (question_id, email, question, created_at) FROM stdin;
 -- Data for Name: thread; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.thread (thread_id, title, description, date, status, faq) FROM stdin;
-2	Test Dummy	<p>asdasd\\</p>\r\n\r\n<p><img alt="logo" src="https://image.freepik.com/free-vector/set-company-logo-design-ideas-vector_53876-60292.jpg" style="height:625px; width:626px" /></p>\r\n\r\n<p>asdad</p>\r\n	2020-07-27	solved	\N
-8	assa	<p>dddddddddddddddddddd</p>\r\n	2020-08-04	solved	\N
-3	How  to Login to Sisma	<p>To get into sisma, you need to do authentification first. you can do it with these following steps :</p>\r\n\r\n<ol style="margin-left:40px">\r\n\t<li>Open <span style="color:#008080">https://</span><em><span style="color:#008080">els.sisma.online</span> </em>in your browser</li>\r\n\t<li>login with you username and password</li>\r\n\t<li>if your authentification was successfull, you will receive OTP</li>\r\n\t<li>type your OTP correctly and you are logged in to ELS.SISMA</li>\r\n</ol>\r\n	2020-08-04	solved	yes
+COPY public.thread (thread_id, title, description, date, status) FROM stdin;
+2	Test Dummy	<p>asdasd\\</p>\r\n\r\n<p><img alt="logo" src="https://image.freepik.com/free-vector/set-company-logo-design-ideas-vector_53876-60292.jpg" style="height:625px; width:626px" /></p>\r\n\r\n<p>asdad</p>\r\n	2020-07-27	solved
+4	Dummy 01	<p>Data Dummy 2020</p>\r\n	2020-07-27	solved
+5	Dummy 02	<p>Data dummy 02</p>\r\n	2020-07-27	solved
+6	Dummy 03	<p>ini data dummy 0003</p>\r\n	2020-07-27	solved
+7	aaaaaaaaaaa	<p>sssssssssssssssssssssssssssss</p>\r\n	2020-07-27	solved
+3	How  to Login to Sisma	<p>To get into sisma, you need to do authentification first. you can do it with these following steps :</p>\r\n\r\n<ol style="margin-left:40px">\r\n\t<li>1. Open <span style="color:#008080">https://</span><em><span style="color:#008080">els.sisma.online</span> </em>in your browser</li>\r\n\t<li>2. login with you username and password</li>\r\n\t<li>3. if your authentification was successfull, you will receive OTP</li>\r\n\t<li>4. type your OTP correctly and you are logged in to ELS.SISMA</li>\r\n</ol>\r\n	2020-07-27	solved
 \.
 
 
@@ -282,7 +284,7 @@ SELECT pg_catalog.setval('public.question_question_id_seq', 1, false);
 -- Name: thread_thread_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.thread_thread_id_seq', 8, true);
+SELECT pg_catalog.setval('public.thread_thread_id_seq', 7, true);
 
 
 --

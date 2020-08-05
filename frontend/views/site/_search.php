@@ -24,6 +24,7 @@ use yii\widgets\ActiveForm;
 
 <div class="form-group">
     <button type="submit" class="download-btn"><i class='bx bxs-search'></i> Search</a>
+    <button type="submit" class="download-btn"><i class='bx bxs-search'></i> Search</a>
 </div>
 
 <?php ActiveForm::end(); ?>
