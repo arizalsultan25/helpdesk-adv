@@ -18,7 +18,7 @@ use app\models\ThreadSearch;
 use app\models\Thread;
 use yii\data\ActiveDataProvider;
 use yii\db\ActiveRecord;
-
+use yii\web\NotFoundHttpException;
 
 /**
  * Site controller
@@ -83,7 +83,7 @@ class SiteController extends Controller
     {
         $searchModel = new ThreadSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $dataProvider->pagination = ['pageSize' => 3];
+        $dataProvider->pagination = ['pageSize' => 5];
         
         //$threads = Thread::find()->where(['status'=> 'solved'])->all();
 
@@ -121,6 +121,26 @@ class SiteController extends Controller
                 'model' => $model,
             ]);
         }
+    }
+
+    protected function findModel($id){
+        if(($model = Thread::findOne($id))){
+            return $model;
+        }else{
+            throw new NotFoundHttpException("The Requested Page doesn't exist");
+        }
+    }
+
+    public function link($id){
+        return $this->render('view', [
+            'model' => $this->findModel($id),
+        ]); 
+    }
+
+    public function actionView($id){
+        return $this->render('view', [
+            'model' => $this->findModel($id),
+        ]);
     }
 
     /**
