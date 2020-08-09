@@ -139,7 +139,9 @@
              </button>
            </div>
            <div class="modal-body">
-             ...
+           <?= $this->render('_create_thread', [
+        'model' => $model,
+    ]) ?>
            </div>
            <div class="modal-footer">
              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
