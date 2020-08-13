@@ -133,7 +133,7 @@
        <div class="modal-dialog" role="document">
          <div class="modal-content">
            <div class="modal-header">
-             <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+             <h5 class="modal-title" id="exampleModalLabel">Ask a question</h5>
              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                <span aria-hidden="true">&times;</span>
              </button>
@@ -182,7 +182,7 @@
 
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="myModalLabel2">Right Sidebar</h4>
+					<h4 class="modal-title" id="myModalLabel2">Chat</h4>
 				</div>
 
 				<div class="modal-body">

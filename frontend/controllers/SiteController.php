@@ -105,6 +105,21 @@ class SiteController extends Controller
      *
      * @return mixed
      */
+
+    public function actionCreate()
+    {
+        $model = new Thread();
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $model->save();
+            return $this->redirect(['view', 'id' => $model->thread_id]);
+        }
+
+        return $this->render('create', [
+            'model' => $model,
+        ]);
+    }
+    
     public function actionLogin()
     {
         if (!Yii::$app->user->isGuest) {

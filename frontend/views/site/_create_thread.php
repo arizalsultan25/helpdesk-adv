@@ -15,17 +15,9 @@ use mihaildev\ckeditor\CKEditor;
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'description')->widget(CKEditor::className(),[
-    'editorOptions' => [
-        'preset' => 'standard', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
-        'inline' => false, //по умолчанию false
-        
-    ],
-]); ?>
-
     <?= $form->field($model, 'date')->textInput(['value' => date("Y-m-d"), 'readonly'=>true]) ?>
 
-    <?= $form->field($model, 'status')->dropDownList(['solved'=>'Solved','on progress'=>'On-progress']) ?>
+    <?= $form->field($model, 'status')->dropDownList(['on progress'=>'On-progress','solved'=>'Solved']) ?>
 
     <?= $form->field($model, 'faq')->dropDownList(['no'=>'No','yes'=>'Yes']) ?>
 
