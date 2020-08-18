@@ -112,7 +112,7 @@ class SiteController extends Controller
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             $model->save();
-            return $this->redirect(['view', 'id' => $model->thread_id]);
+            return $this->redirect(['index', 'id' => $model->thread_id]);
         }
 
         return $this->render('create', [

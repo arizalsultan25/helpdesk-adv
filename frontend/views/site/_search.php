@@ -25,6 +25,7 @@ use yii\widgets\ActiveForm;
 <div class="form-group">
     <button type="submit" class="download-btn"><i class='bx bxs-search'></i> Search</a>
     <button type="button" class="download-btn" data-toggle="modal" data-target="#myModal2">
+    <i class='bx bx-question-mark'></i>
 			Ask
 		</button>
 </div>

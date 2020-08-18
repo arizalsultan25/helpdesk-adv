@@ -21,44 +21,6 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: answer; Type: TABLE; Schema: public; Owner: postgres
---
-
-CREATE TABLE public.answer (
-    question integer NOT NULL,
-    answer_id integer NOT NULL,
-    email character varying(100) NOT NULL,
-    answer text NOT NULL,
-    created_on date,
-    status character varying(20)
-);
-
-
-ALTER TABLE public.answer OWNER TO postgres;
-
---
--- Name: answer_answer_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE public.answer_answer_id_seq
-    AS integer
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.answer_answer_id_seq OWNER TO postgres;
-
---
--- Name: answer_answer_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE public.answer_answer_id_seq OWNED BY public.answer.answer_id;
-
-
---
 -- Name: migration; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -69,41 +31,6 @@ CREATE TABLE public.migration (
 
 
 ALTER TABLE public.migration OWNER TO postgres;
-
---
--- Name: question; Type: TABLE; Schema: public; Owner: postgres
---
-
-CREATE TABLE public.question (
-    question_id integer NOT NULL,
-    email character varying(100) NOT NULL,
-    question text NOT NULL,
-    created_at date
-);
-
-
-ALTER TABLE public.question OWNER TO postgres;
-
---
--- Name: question_question_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE public.question_question_id_seq
-    AS integer
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.question_question_id_seq OWNER TO postgres;
-
---
--- Name: question_question_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE public.question_question_id_seq OWNED BY public.question.question_id;
 
 
 --
@@ -265,20 +192,6 @@ COPY public."user" (id, username, auth_key, password_hash, password_reset_token,
 
 
 --
--- Name: answer_answer_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.answer_answer_id_seq', 1, false);
-
-
---
--- Name: question_question_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.question_question_id_seq', 1, false);
-
-
---
 -- Name: thread_thread_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -293,27 +206,12 @@ SELECT pg_catalog.setval('public.user_id_seq', 1, true);
 
 
 --
--- Name: answer answer_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public.answer
-    ADD CONSTRAINT answer_pkey PRIMARY KEY (answer_id);
-
-
---
 -- Name: migration migration_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.migration
     ADD CONSTRAINT migration_pkey PRIMARY KEY (version);
 
-
---
--- Name: question question_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public.question
-    ADD CONSTRAINT question_pkey PRIMARY KEY (question_id);
 
 
 --
@@ -355,20 +253,6 @@ ALTER TABLE ONLY public."user"
 ALTER TABLE ONLY public."user"
     ADD CONSTRAINT user_username_key UNIQUE (username);
 
-
---
--- Name: idx-answer-question; Type: INDEX; Schema: public; Owner: postgres
---
-
-CREATE INDEX "idx-answer-question" ON public.answer USING btree (question);
-
-
---
--- Name: answer fk-answer-question; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public.answer
-    ADD CONSTRAINT "fk-answer-question" FOREIGN KEY (question) REFERENCES public.question(question_id) ON DELETE CASCADE;
 
 
 --
