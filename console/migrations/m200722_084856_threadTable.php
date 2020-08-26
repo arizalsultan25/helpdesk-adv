@@ -19,6 +19,7 @@ class m200722_084856_threadTable extends Migration
             'date' => $this->date()->notNull(),
             'image' => $this->string(255),
             'status' => $this->string(20),
+            'faq' => $this->string(),
         ]);
 
         $this->insert('thread', [
