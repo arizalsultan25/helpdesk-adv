@@ -5,6 +5,8 @@ namespace backend\controllers;
 use Yii;
 use app\models\Thread;
 use app\models\ThreadSearch;
+use app\models\FAQSearch;
+use app\models\QuestionSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -40,6 +42,28 @@ class ThreadController extends Controller
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    public function actionFaq(){
+        $searchModel = new FAQSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+
+        return $this->render('faq', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    public function actionQuestions(){
+        $searchModel = new QuestionSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        
+
+        return $this->render('questions', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
