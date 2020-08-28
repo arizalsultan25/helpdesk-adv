@@ -3,6 +3,7 @@ namespace common\models;
 
 use Yii;
 use yii\base\Model;
+use aryelds\sweetalert\SweetAlert;
 
 /**
  * Login form
@@ -43,6 +44,14 @@ class LoginForm extends Model
         if (!$this->hasErrors()) {
             $user = $this->getUser();
             if (!$user || !$user->validatePassword($this->password)) {
+                echo SweetAlert::widget([
+                    'options' => [
+                        'title' => "Login",
+                        'text' => "You have login successfully! ",
+                        'type' => SweetAlert::TYPE_ERROR
+                    ]
+                ]);
+                
                 $this->addError($attribute, 'Incorrect username or password.');
             }
         }
@@ -55,7 +64,7 @@ class LoginForm extends Model
      */
     public function login()
     {
-        if ($this->validate()) {
+        if ($this->validate()) {         
             return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
         }
         
@@ -73,6 +82,13 @@ class LoginForm extends Model
             $this->_user = User::findByUsername($this->username);
         }
 
+        echo SweetAlert::widget([
+            'options' => [
+                'title' => "Good Job!",
+                'text' => "You clicked the button!",
+                'type' => SweetAlert::TYPE_SUCCESS
+            ]
+        ]);
         return $this->_user;
     }
 }

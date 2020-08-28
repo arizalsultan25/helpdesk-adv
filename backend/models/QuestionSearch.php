@@ -43,7 +43,7 @@ class QuestionSearch extends Thread
      */
     public function search($params)
     {
-        $query = Thread::find()->where(['status' => 'on-progress']);
+        $query = Thread::find()->where(['status' => 'on progress']);
 
         // add conditions that should always apply here
 

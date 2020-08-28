@@ -1,4 +1,5 @@
 <?php
+
 namespace backend\controllers;
 
 use Yii;
@@ -6,8 +7,8 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
-use yii\data\ActiveDataProvider;
-use backend\controllers\PostController;
+use app\models\Thread;
+
 
 /**
  * Site controller
@@ -62,10 +63,12 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        
+        $count = Thread::find()->where([])->count();
+        $faq = Thread::find()->where(['faq' => 'yes'])->count();
+        $question = Thread::find()->where(['status' => 'on progress'])->count();
+        $solved = Thread::find()->where(['status' => 'solved'])->count();
 
-        return $this->render('index');
-
+        return $this->render('index', ['count' => $count, 'faq' => $faq, 'question' => $question, 'solved' => $solved]);
     }
 
     /**
@@ -80,7 +83,7 @@ class SiteController extends Controller
         }
 
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+        if ($model->load(Yii::$app->request->post()) && $model->login()) { 
             return $this->goBack();
         } else {
             $model->password = '';
@@ -98,6 +101,7 @@ class SiteController extends Controller
      */
     public function actionLogout()
     {
+        
         Yii::$app->user->logout();
 
         return $this->goHome();
