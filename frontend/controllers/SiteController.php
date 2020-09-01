@@ -106,6 +106,12 @@ class SiteController extends Controller
      * @return mixed
      */
 
+    public function actionKnowledge(){
+        return $this->render('knowledge');
+    }
+
+
+
     public function actionCreate()
     {
         $model = new Thread();
