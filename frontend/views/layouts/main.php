@@ -17,15 +17,15 @@ AppAsset::register($this);
 <html lang="<?= Yii::$app->language ?>">
 
 <head>
-    <meta charset="<?= Yii::$app->charset ?>">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?php $this->registerCsrfMetaTags() ?>
+	<meta charset="<?= Yii::$app->charset ?>">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<?php $this->registerCsrfMetaTags() ?>
 
-    <title><?= Html::encode($this->title) ?></title>
+	<title><?= Html::encode($this->title) ?></title>
 	<?php $this->head() ?>
 	<style>
-		.content{
+		.content {
 			margin-top: 90px;
 		}
 	</style>
@@ -33,16 +33,21 @@ AppAsset::register($this);
 
 <body>
 	<?php $this->beginBody() ?>
-		<!-- Header -->
-		<?= $this->render('header.php') ?>
-
-		<!-- Content -->
-		<div class="content">
+	<!-- Header -->
+	<?php
+	if (Yii::$app->user->isGuest) {
+		echo $this->render('header');
+	} else {
+	?>
+		<?= $this->render('header_login') ?>
+	<?php } ?>
+	<!-- Content -->
+	<div class="content">
 		<?= $content ?>
-		</div>
-		
+	</div>
 
-    <?php $this->endBody() ?>
+
+	<?php $this->endBody() ?>
 </body>
 
 </html>

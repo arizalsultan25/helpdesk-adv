@@ -17,7 +17,7 @@ use yii\helpers\Url;
             <ul>
                 <li><?= Html::a('Home', '/site', $options = []) ?></li>
                 <li><?= Html::a('F.A.Q', '/site#faq', $options = []) ?></li>
-                <li><?= Html::a('Knowledgebase', '/site/knowledge', $options = []) ?></li>
+                <li><?= Html::a('admin', '/site/knowledge', $options = []) ?></li>
                 <li><?= Html::a('Contact', '/site#contact', $options = []) ?></li>
                 <?php
 
